@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo">SM</div>
+                <div>
+                    <h1>Student Manager</h1>
+                    <p class="small-text">Student Management System</p>
+                </div>
+            </div>
+
+            <div class="header-buttons">
+                <button id="courseButton" class="button button-secondary">Set Course</button>
+                <button id="refreshButton" class="button button-orange">Refresh</button>
+            </div>
+        </header>
+        <main>
+            <section class="welcome">
+                <p class="section-label">STUDENT DASHBOARD</p>
+                <h2>Welcome!</h2>
+                <p>Manage your student information in one place.</p>
+                <p class="course-text">
+                    Course Name: <span id="courseName">Not selected</span>
+                </p>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <p class="small-text">Total Students</p>
+                    <h2 id="studentCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p class="small-text">API Users</p>
+                    <h2 id="apiCount">0</h2>
+                </div>
+            </section>
+
+            <section class="main-content">
+
+                <section class="panel add-panel">
+                    <div class="panel-heading">
+                        <span class="orange-line"></span>
+                        <h3>Add Student</h3>
+                    </div>
+
+                    <p class="small-text">Enter the student information.</p>
+
+                    <form id="studentForm">
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName" placeholder="Enter student name" required>
+
+                        <label for="studentEmail">Student Email</label>
+                        <input type="email" id="studentEmail" placeholder="Enter student email" required>
+
+                        <button type="submit" class="button button-orange save-button">
+                            Save Student
+                        </button>
+                    </form>
+                </section>
+
+                <section class="panel">
+                    <div class="panel-heading">
+                        <span class="orange-line"></span>
+                        <h3>Student List</h3>
+                    </div>
+
+                    <p class="small-text">Students saved in this browser.</p>
+
+                    <div id="studentList" class="student-list">
+                        <p class="empty-message">No students added yet.</p>
+                    </div>
+                </section>
+
+
+
+                <section class="panel api-panel">
+                    <div class="api-heading">
+                        <div>
+                            <div class="panel-heading">
+                                <span class="orange-line"></span>
+                                <h3>API Users</h3>
+                            </div>
+                            <p class="small-text">Load sample users from JSONPlaceholder.</p>
+                        </div>
+
+                        <button id="loadApiButton" class="button button-orange">
+                            Load API Users
+                        </button>
+                    </div>
+
+                    <p id="apiStatus" class="status">Click the button to load users.</p>
+                    <div id="apiList" class="api-list"></div>
+                </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
